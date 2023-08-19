@@ -1,0 +1,1 @@
+Olá esse projeto é destinado a geração de senhas aleatorias atravez da linguagem JAVA, ultilizando de uma semente de 102 caracters(A-Z, a-z, 0-9, !#%&$);
