@@ -26,8 +26,9 @@ public class Main{
         Calendar calendario = Calendar.getInstance();
         Random random = new Random();
         
-        String c1 = "A1a@B2b%C3c$D4d#E5e!F6f@G7g%H8h$I9i#J0j!Kk@L1l%M2m$N3n#O4o!P5p@Q6q%R7r$S8s#T9t!Uu@V1v%W2w$X3x#Y4y!Z5z@";
-        String m = calendario.get(Calendar.MINUTE) + "";    // DEFINIÇAO DE VARIAVEIS E CONTROLE DO TEMPO DO DISPOSITIVO PARA GERAR SENHA;
+        // DEFINIÇAO DE VARIAVEIS E CONTROLE DO TEMPO DO DISPOSITIVO PARA GERAR SENHA;
+        String semente = "A1a@B2b%C3c$D4d#E5e!F6f@G7g%H8h$I9i#J0j!Kk@L1l%M2m$N3n#O4o!P5p@Q6q%R7r$S8s#T9t!Uu@V1v%W2w$X3x#Y4y!Z5z@";
+        String m = calendario.get(Calendar.MINUTE) + "";    
         String senha = "";
         int pos = 0;
         int minuto = m.charAt((m.length()-1)) - 'O';
@@ -41,10 +42,10 @@ public class Main{
         
         while(senha.length() != digitos){
             
-            if(randomico*minuto+pos > c1.length()){
-                senha += c1.charAt(randomico*minuto+pos);
+            if(randomico*minuto+pos > semente.length()){
+                senha += semente.charAt(randomico*minuto+pos);
             }else{
-                senha += c1.charAt(random.nextInt(101));
+                senha += semente.charAt(random.nextInt(101));
                 pos = 0;
             }
                 pos += random.nextInt(10);
